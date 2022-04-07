@@ -1,1 +1,1 @@
-# Rock-paper-scissors
+Made a website in which you can play 'Rock, paper and scissors' game. This was part of my Odin project.
