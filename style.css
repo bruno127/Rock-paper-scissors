@@ -1,0 +1,22 @@
+body {
+    background-color: antiquewhite;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 570px;
+    margin: 0;
+}
+
+button {
+    padding: 16px;
+    font-size: x-large;
+    background-color: cornflowerblue;
+    border: 1px solid;
+}
+
+button:hover {
+    cursor: pointer;
+}
