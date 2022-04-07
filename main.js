@@ -19,14 +19,14 @@ function playRound(round) {
 }
 
 function playerChoice() {
-    let input = prompt('Choose\nRock, paper or scissors');
+    let input = prompt('Choose:\nRock, paper or scissors');
     while (input == null) {
-        input = ('Please, enter your choice')
+        input = ('Please, enter your choice.')
     }
     input = input.toLowerCase();
     let check = validateInput(input);
     while (check == false) {
-        input = prompt('You write your choice wrong, please try again');
+        input = prompt('You wrote your choice wrong, please try again');
         while (input == null) {
             input = prompt('Please try again');
         }
