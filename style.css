@@ -1,22 +1,18 @@
 body {
-    background-color: antiquewhite;
-}
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 570px;
-    margin: 0;
+    background-color: #ccc;
 }
 
-button {
-    padding: 16px;
-    font-size: x-large;
-    background-color: cornflowerblue;
-    border: 1px solid;
-}
-
-button:hover {
+.selection {
+    background: none;
+    border: none;
+    outline: none;
     cursor: pointer;
+    font-size: 4rem;
+    transition: 150ms;
 }
+
+.selection:hover {
+    transform: scale(1.3);
+}
+
+

@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="flex-container">
-    <h1>Rock, paper or scissors</h1>
-<button onclick = "game()" >Start a game</button>
-</div>
-
-</body>
-<script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="score">
+        <h1 class="ties">Ties</h1>
+    </div>
+    <div class="winnerDiv">
+        <h1 class="winner"></h1>
+        <button class="reset" onclick="resetGame()">Play again</button>
+    </div>
+    <div class="playerSection">
+        <h3 class="playerChoice"></h3>
+        <h3 class="playerScore">Score: 0</h3>
+        <button class="selection">✋🏻</button>
+        <button class="selection">✊🏻</button>
+        <button class="selection">🤘🏻</button>
+    </div>
+    <div class="computerSection">
+        <h3 class="computerChoice"></h3>
+        <h3 class="computerScore">Score: 0</h3>
+        <button class="selection">✋🏻</button>
+        <button class="selection">✊🏻</button>
+        <button class="selection">🤘🏻</button>
+  </body>
+  <script src="main.js"></script>
 </html>
