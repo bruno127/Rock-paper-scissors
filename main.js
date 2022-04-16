@@ -1,35 +1,101 @@
-let choices;
-choices = ["paper", "rock", "scissors"];
-let winners = [];
+const computerChoiceDisplay = document.getElementById('computer-choice')
+const userChoiceDisplay = document.getElementById('user-choice')
+const resultDisplay = document.getElementById('result')
+const possibleChoices = document.querySelectorAll('button')
+const playerWon = document.getElementById('player-won') //dohvatio iz HTML!
+const compWon = document.getElementById('computer-won')
+document.getElementsByClassName('container-popup')[0].style.visibility = 'hidden';
+const againButton = document.getElementById('button-again')
+const winnerDisplay = document.getElementById('winner')
+let winner = [];
+let playerWin = 0 
+let compWin = 0
+let userChoice
+let computerChoice
+let result
 
-function startGame() {}
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+  userChoice = e.target.id
+  userChoiceDisplay.innerHTML = userChoice
+  generateComputerChoice()
+  getResult()
+  endGame()
+}))
 
-function playRound(round) {
-  const compSelection = computerChoice();
-  const winner = checkWinner(playerSelection, compSelection);
-  winners.push(winner);
+function generateComputerChoice() {
+  const randomNumber = Math.floor(Math.random() * 3) + 1 // or you can use possibleChoices.length
+  
+  if (randomNumber === 1) {
+    computerChoice = 'rock'
+  }
+  if (randomNumber === 2) {
+    computerChoice = 'scissors'
+  }
+  if (randomNumber === 3) {
+    computerChoice = 'paper'
+  }
+  computerChoiceDisplay.innerHTML = computerChoice
 }
 
-function computerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
+function getResult() {
+  if (computerChoice === userChoice) {
+    result = 'its a draw!'
+  }
+  if (computerChoice === 'rock' && userChoice === "paper") {
+    result = 'you win!'
+    playerWin++ // ako player pobijedi rezultat raste
+  }
+  if (computerChoice === 'rock' && userChoice === "scissors") {
+    result = 'you lost!'
+    compWin++
+  }
+  if (computerChoice === 'paper' && userChoice === "scissors") {
+    result = 'you win!'
+     playerWin++
+  }
+  if (computerChoice === 'paper' && userChoice === "rock") {
+    result = 'you lose!'
+    compWin++
+  }
+  if (computerChoice === 'scissors' && userChoice === "rock") {
+    result = 'you win!'
+    playerWin++
+  }
+  if (computerChoice === 'scissors' && userChoice === "paper") {
+    result = 'you lose!'
+    compWin++
+  }
+  resultDisplay.innerHTML = result
+  playerWon.innerHTML = playerWin //deklariram playerWon, da ne bi pisao documents.geteleme....
+  compWon.innerHTML = compWin
 }
 
-function checkWinner(choiceP, choiceC) {
-  if (choiceP === choiceC) {
-    return "Tie";
-  } else if (
-    (choiceP === "rock" && choiceC === "scissors") ||
-    (choiceP === "scissors" && choiceC === "paper") ||
-    (choiceP === "paper" && choiceC === "rock")
-  ) {
-    return "Player";
-  } else return "Computer";
+function endGame() {
+    if (playerWin == 2) {
+        winner = 'Player wins, congratulations!'
+        document.getElementById('rock').disabled=true
+         document.getElementById('paper').disabled=true
+          document.getElementById('scissors').disabled=true
+           document.getElementsByClassName('container-popup')[0].style.visibility = 'visible';
+          
+          
+    }
+    if (compWin == 2) {
+        winner = 'Computer wins, try again!'
+          document.getElementById('rock').disabled=true
+           document.getElementById('paper').disabled=true
+            document.getElementById('scissors').disabled=true
+            document.getElementsByClassName('container-popup')[0].style.visibility = 'visible';
+            
+            
+            
+    }
+    winnerDisplay.innerHTML = winner
 }
 
-function logWins() {
-  let playerWins = winners.filter((item) => item == "Player").length;
-  let computerWins = winners.filter((item) => item == "Computer").length;
-  let ties = winners.filter((item) => item == "Tie").length;
+function reload () {
+    againButton.addEventListener('click', () => {
+                location.reload();
+                })       
 }
-
-startGame();
+let reloadMe = reload() 

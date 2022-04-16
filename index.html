@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors Tutorial</title>
+    <link rel='stylesheet' href="style.css">
   </head>
   <body>
-    <div class="score">
-        <h1 class="ties">Ties</h1>
+    <div class="header"><h1>Rock, paper, scissors</h1></div>
+    <div class="container-popup">
+    <div class="popup">
+    <span id="winner"></span>
+    <button id="button-again">Play again</button>
     </div>
-    <div class="winnerDiv">
-        <h1 class="winner"></h1>
-        <button class="reset" onclick="resetGame()">Play again</button>
     </div>
-    <div class="playerSection">
-        <h3 class="playerChoice"></h3>
-        <h3 class="playerScore">Score: 0</h3>
-        <button class="selection">✋🏻</button>
-        <button class="selection">✊🏻</button>
-        <button class="selection">🤘🏻</button>
-    </div>
-    <div class="computerSection">
-        <h3 class="computerChoice"></h3>
-        <h3 class="computerScore">Score: 0</h3>
-        <button class="selection">✋🏻</button>
-        <button class="selection">✊🏻</button>
-        <button class="selection">🤘🏻</button>
+    <div class = 'container'>
+    <h2>Computer Choice: <span id="computer-choice"></span></h2>
+    <h2>Player Choice: <span id="user-choice"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
+    <div class="selections">
+    <button class="selection" id = "rock">✊</button>
+    <button class="selection" id = "paper">✋</button>
+    <button class="selection" id = "scissors">✌</button>
+  </div>
+    <h2>Player won:<span id="player-won"></span></h2>
+    <h2>Computer won:<span id="computer-won"></span></h2>
+</div>
+    <div class="footer"><h1>Copyright</h1></div>
+
+    <script src="main.js" charset="utf-8"></script>
   </body>
-  <script src="main.js"></script>
 </html>
