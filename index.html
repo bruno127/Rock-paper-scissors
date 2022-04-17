@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Rock Paper Scissors Tutorial</title>
     <link rel='stylesheet' href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
   </head>
   <body>
-    <div class="header"><h1>Rock, paper, scissors</h1></div>
+    <div class="header"><h1>ROCK PAPER SCISSORS</h1></div>
     <div class="container-popup">
     <div class="popup">
     <span id="winner"></span>
@@ -14,18 +15,28 @@
     </div>
     </div>
     <div class = 'container'>
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
-    <h2>Player Choice: <span id="user-choice"></span></h2>
-    <h2>Result: <span id="result"></span></h2>
-    <div class="selections">
-    <button class="selection" id = "rock">✊</button>
-    <button class="selection" id = "paper">✋</button>
-    <button class="selection" id = "scissors">✌</button>
-  </div>
-    <h2>Player won:<span id="player-won"></span></h2>
-    <h2>Computer won:<span id="computer-won"></span></h2>
+    <h2 class="result"><span id="result"></span></h2>
+    <div class="choices">
+        <div class = 'score-box'>
+    <h2><span id="user-choice"></span></h2>
+    <h2>Player: <span id="player-won"></span></h2>
 </div>
-    <div class="footer"><h1>Copyright</h1></div>
+<div class = score-box>
+    <h2><span id="computer-choice"></span></h2>
+    <h2>Computer: <span id="computer-won"></span></h2>
+</div>
+</div>
+    <div class="selections">
+    <button class="selection" id = "✊">✊</button>
+    <button class="selection" id = "✋">✋</button>
+    <button class="selection" id = "✌">✌</button>
+  </div>
+</div>
+<div class='footer'>
+    <p>Copyright © 2022 bruno127 <a href="https://github.com/bruno127" target="_blank">
+        <i class="fab fa-github"></i
+      ></a></p>
+  </div>
 
     <script src="main.js" charset="utf-8"></script>
   </body>

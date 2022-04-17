@@ -26,43 +26,43 @@ function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3) + 1 // or you can use possibleChoices.length
   
   if (randomNumber === 1) {
-    computerChoice = 'rock'
+    computerChoice = '✊'
   }
   if (randomNumber === 2) {
-    computerChoice = 'scissors'
+    computerChoice = '✌'
   }
   if (randomNumber === 3) {
-    computerChoice = 'paper'
+    computerChoice = '✋'
   }
   computerChoiceDisplay.innerHTML = computerChoice
 }
 
 function getResult() {
   if (computerChoice === userChoice) {
-    result = 'its a draw!'
+    result = "It's a draw!"
   }
-  if (computerChoice === 'rock' && userChoice === "paper") {
-    result = 'you win!'
+  if (computerChoice === '✊' && userChoice === "✋") {
+    result = 'You won!'
     playerWin++ // ako player pobijedi rezultat raste
   }
-  if (computerChoice === 'rock' && userChoice === "scissors") {
-    result = 'you lost!'
+  if (computerChoice === '✊' && userChoice === "✌") {
+    result = 'You lost!'
     compWin++
   }
-  if (computerChoice === 'paper' && userChoice === "scissors") {
-    result = 'you win!'
+  if (computerChoice === '✋' && userChoice === "✌") {
+    result = 'You won!'
      playerWin++
   }
-  if (computerChoice === 'paper' && userChoice === "rock") {
-    result = 'you lose!'
+  if (computerChoice === '✋' && userChoice === "✊") {
+    result = 'You lost!'
     compWin++
   }
-  if (computerChoice === 'scissors' && userChoice === "rock") {
-    result = 'you win!'
+  if (computerChoice === '✌' && userChoice === "✊") {
+    result = 'You won!'
     playerWin++
   }
-  if (computerChoice === 'scissors' && userChoice === "paper") {
-    result = 'you lose!'
+  if (computerChoice === '✌' && userChoice === "✋") {
+    result = 'You lost!'
     compWin++
   }
   resultDisplay.innerHTML = result
@@ -71,20 +71,20 @@ function getResult() {
 }
 
 function endGame() {
-    if (playerWin == 2) {
+    if (playerWin == 5) {
         winner = 'Player wins, congratulations!'
-        document.getElementById('rock').disabled=true
-         document.getElementById('paper').disabled=true
-          document.getElementById('scissors').disabled=true
+        document.getElementById('✊').disabled=true
+         document.getElementById('✋').disabled=true
+          document.getElementById('✌').disabled=true
            document.getElementsByClassName('container-popup')[0].style.visibility = 'visible';
           
           
     }
-    if (compWin == 2) {
+    if (compWin == 5) {
         winner = 'Computer wins, try again!'
-          document.getElementById('rock').disabled=true
-           document.getElementById('paper').disabled=true
-            document.getElementById('scissors').disabled=true
+          document.getElementById('✊').disabled=true
+           document.getElementById('✋').disabled=true
+            document.getElementById('✌').disabled=true
             document.getElementsByClassName('container-popup')[0].style.visibility = 'visible';
             
             
